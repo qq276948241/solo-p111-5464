@@ -5,6 +5,7 @@ export const products: Product[] = [
     id: 1,
     name: '有机西红柿',
     image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=fresh%20red%20tomatoes%20on%20vine%20farm%20harvest%20close%20up%20natural%20lighting&image_size=square',
+    category: 'vegetable',
     isSpecial: true,
     specs: [
       { id: 101, productId: 1, name: '约1斤', price: 6.5, memberPrice: 5.8, stock: 12, unit: '斤' },
@@ -16,6 +17,7 @@ export const products: Product[] = [
     id: 2,
     name: '新鲜黄瓜',
     image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=fresh%20green%20cucumbers%20on%20white%20background%20farm%20vegetable&image_size=square',
+    category: 'vegetable',
     isSpecial: false,
     specs: [
       { id: 201, productId: 2, name: '约1斤', price: 4.0, memberPrice: 3.5, stock: 20, unit: '斤' },
@@ -26,6 +28,7 @@ export const products: Product[] = [
     id: 3,
     name: '紫甘蓝',
     image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=purple%20cabbage%20red%20cabbage%20fresh%20vegetable%20farm&image_size=square',
+    category: 'vegetable',
     isSpecial: false,
     specs: [
       { id: 301, productId: 3, name: '约1个', price: 5.0, memberPrice: 4.2, stock: 4, unit: '个' },
@@ -36,6 +39,7 @@ export const products: Product[] = [
     id: 4,
     name: '本地土豆',
     image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=fresh%20potatoes%20on%20burlap%20sack%20farm%20harvest&image_size=square',
+    category: 'vegetable',
     isSpecial: true,
     specs: [
       { id: 401, productId: 4, name: '约2斤', price: 5.0, memberPrice: 4.0, stock: 30, unit: '斤' },
@@ -46,6 +50,7 @@ export const products: Product[] = [
     id: 5,
     name: '水培生菜',
     image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=fresh%20green%20lettuce%20hydroponic%20vegetable%20clean&image_size=square',
+    category: 'vegetable',
     isSpecial: false,
     specs: [
       { id: 501, productId: 5, name: '1棵', price: 3.5, memberPrice: 2.8, stock: 1, unit: '棵' },
@@ -56,6 +61,7 @@ export const products: Product[] = [
     id: 6,
     name: '胡萝卜',
     image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=fresh%20orange%20carrots%20with%20greens%20farm%20vegetable&image_size=square',
+    category: 'vegetable',
     isSpecial: false,
     specs: [
       { id: 601, productId: 6, name: '约1斤', price: 4.5, memberPrice: 3.8, stock: 18, unit: '斤' },
@@ -66,6 +72,7 @@ export const products: Product[] = [
     id: 7,
     name: '大白菜',
     image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=fresh%20Chinese%20cabbage%20napa%20cabbage%20vegetable%20market&image_size=square',
+    category: 'vegetable',
     isSpecial: false,
     specs: [
       { id: 701, productId: 7, name: '约1棵', price: 4.0, memberPrice: 3.2, stock: 4, unit: '棵' },
@@ -76,6 +83,7 @@ export const products: Product[] = [
     id: 8,
     name: '嫩豆角',
     image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=fresh%20green%20beans%20string%20beans%20farm%20vegetable&image_size=square',
+    category: 'vegetable',
     isSpecial: true,
     specs: [
       { id: 801, productId: 8, name: '约1斤', price: 7.0, memberPrice: 5.9, stock: 2, unit: '斤' },

@@ -13,8 +13,21 @@ const cart = useCart()
 const showModal = ref(false)
 const selectedProduct = ref<Product | null>(null)
 
+const categories = [
+  { key: 'all', label: '全部' },
+  { key: 'vegetable', label: '蔬菜' },
+  { key: 'fruit', label: '水果' },
+  { key: 'meat', label: '肉禽' },
+] as const
+
+type CategoryKey = (typeof categories)[number]['key']
+const currentCategory = ref<CategoryKey>('all')
+
 const specialProducts = computed(() => products.filter((p) => p.isSpecial))
-const allProducts = computed(() => products)
+const filteredProducts = computed(() => {
+  if (currentCategory.value === 'all') return products
+  return products.filter((p) => p.category === currentCategory.value)
+})
 const currentBannerIdx = ref(0)
 
 function openSpec(product: Product) {
@@ -92,14 +105,35 @@ startBannerAutoPlay()
       </div>
     </section>
 
+    <section class="px-3 mb-2">
+      <div class="flex items-center h-9 gap-1">
+        <button
+          v-for="cat in categories"
+          :key="cat.key"
+          class="relative flex items-center justify-center h-full px-3.5 text-sm font-medium transition-colors"
+          :class="currentCategory === cat.key ? 'text-green-700' : 'text-gray-400'"
+          @click="currentCategory = cat.key"
+        >
+          {{ cat.label }}
+          <span
+            v-if="currentCategory === cat.key"
+            class="absolute bottom-1 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-green-700 rounded-full"
+          ></span>
+        </button>
+      </div>
+    </section>
+
     <section class="px-3">
-      <div class="grid grid-cols-2 gap-2.5">
+      <div v-if="filteredProducts.length > 0" class="grid grid-cols-2 gap-2.5">
         <ProductCard
-          v-for="product in allProducts"
+          v-for="product in filteredProducts"
           :key="product.id"
           :product="product"
           @click="openSpec"
         />
+      </div>
+      <div v-else class="text-center py-16 text-xs text-gray-400">
+        该分类暂无菜品
       </div>
     </section>
 
